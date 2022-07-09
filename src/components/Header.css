@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6vh;
+    background-color: var(--secondaryBgColor);
+    padding: 1rem;
+    color: var(--textColor);
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.header button {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--primaryBgColor);
+    color: var(--textColor);
+    border: none;
+}

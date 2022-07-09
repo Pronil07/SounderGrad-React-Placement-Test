@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Slides from "./components/Slides";
 
 function App() {
+  const slideInfo = [
+    {
+      title: "title 0",
+      text: "text 0",
+    },
+    {
+      title: "title 1",
+      text: "text 1",
+    },
+    {
+      title: "title 2",
+      text: "text 2",
+    },
+    {
+      title: "title 3",
+      text: "text 3",
+    },
+  ];
+
+  const [theme, setTheme] = useState("light");
+  const toggleTheme = () => {
+    setTheme((prevTheme) =>
+      prevTheme === "light" ? "dark" : prevTheme === "dark" ? "light" : "light"
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" data-theme={theme}>
+      <Header toggleTheme={toggleTheme}></Header>
+      <Slides slides={slideInfo}></Slides>
     </div>
   );
 }
